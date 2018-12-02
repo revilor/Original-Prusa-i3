@@ -35,5 +35,35 @@ module front_plate()
     }
 }
 
+
+module front_plate_M6()
+{
+    difference()
+    {
+        translate([50,-65.5,-13.5]) cube([15,4.5,34.5]);
+        
+        // screws
+        translate([59,-48,-8]) rotate([90,0,0]) cylinder(r=1.65, h=30, $fn=50);
+        translate([59,-48,15]) rotate([90,0,0]) cylinder(r=1.65, h=30, $fn=50);
+        
+        translate([59,-60,-8]) rotate([90,0,0]) cylinder(r2=1.65,r1=2.5, h=1.5, $fn=50);
+        translate([59,-60,15]) rotate([90,0,0]) cylinder(r2=1.65,r1=2.5, h=1.5, $fn=50);
+        
+        translate([59,-65,-8]) rotate([90,0,0]) cylinder(r=3.2, h=5, $fn=50);
+        translate([59,-65,15]) rotate([90,0,0]) cylinder(r=3.2, h=5, $fn=50);
+        
+        // brass insert
+        translate([59,-60,4]) rotate([90,0,0]) cylinder(r=5/2, h=6, $fn=50); 
+        translate([59,-61 -3.8,4]) rotate([90,0,0]) cylinder(r=8.5/2, h=4.5, $fn=50); 
+        
+        // edges
+        translate([45,-64,-15]) rotate([0,0,-45]) cube([15,4,40]);
+        translate([45,-64,-18.5]) rotate([45,0,0]) cube([25,4,42]);
+        translate([45,-71,19]) rotate([-45,0,0]) cube([25,4,40]);
+        
+    }
+}
+
+
 rotate([-90,0,0]) 
-front_plate();
+front_plate_M6();
